@@ -1,15 +1,15 @@
 import React from 'react';
-import { Typography, Stack } from '@mui/material';
+import { Stack } from '@mui/material';
+
+// 커스텀 타이포그래피 컴포넌트 import
+import { HeadlineL, HeadlineM, HeadlineS } from '../components/typography';
 
 const TypographyPage = () => {
     return (
         <Stack spacing={2}>
-            <Typography variant="h1">H1 제목입니다</Typography>
-            <Typography variant="h2">H2 제목입니다</Typography>
-            <Typography variant="h3">H3 제목입니다</Typography>
-            <Typography variant="h4">H4 제목입니다</Typography>
-            <Typography variant="h5">H5 제목입니다</Typography>
-            <Typography variant="h6">H6 제목입니다</Typography>
+            <HeadlineL>HeadLine L Pretendard Bold 48</HeadlineL>
+            <HeadlineM>HeadLine M Pretendard Bold 40</HeadlineM>
+            <HeadlineS>HeadLine S Pretendard Bold 36</HeadlineS>
         </Stack>
     );
 };
