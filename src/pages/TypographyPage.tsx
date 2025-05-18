@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack } from '@mui/material';
 
 // 커스텀 타이포그래피 컴포넌트 import
-import { HeadlineL, HeadlineM, HeadlineS } from '../components/typography';
+import { HeadlineL, HeadlineM, HeadlineS, TitleL, TitleM, TitleS, TitleXS } from '../components/typography';
 
 const TypographyPage = () => {
     return (
@@ -10,6 +10,10 @@ const TypographyPage = () => {
             <HeadlineL>HeadLine L Pretendard Bold 48</HeadlineL>
             <HeadlineM>HeadLine M Pretendard Bold 40</HeadlineM>
             <HeadlineS>HeadLine S Pretendard Bold 36</HeadlineS>
+            <TitleL>Title L Pretendard Semibold 30</TitleL>
+            <TitleM>Title M Pretendard Semibold 26</TitleM>
+            <TitleS>Title S Pretendard Semibold 24</TitleS>
+            <TitleXS>Title XS Pretendard Semibold 20</TitleXS>
         </Stack>
     );
 };
