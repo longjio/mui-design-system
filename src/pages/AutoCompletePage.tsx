@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ComboBox from './autocomplete/ComboBox';
+import ComboBox from '../components/autocomplete/ComboBox';
 
 export default function AutocompletePage() {
     return (

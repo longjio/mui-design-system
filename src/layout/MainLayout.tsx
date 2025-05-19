@@ -34,8 +34,7 @@ const menuGroups = [
     {
         title: 'Autocomplete',
         items: [
-            { text: 'Combo', path: '/textfield' },
-            { text: 'Input', path: '/checkbox' },
+            { text: 'ComboBox', path: '/autocomplete' },
         ],
     },
     {
