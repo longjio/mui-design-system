@@ -36,6 +36,12 @@ const menuGroups: MenuGroup[] = [
     {
         title: 'Autocomplete',
         items: [
+            { text: 'Autocomplete', path: '/autocomplete' },
+        ],
+    },
+    {
+        title: 'Input',
+        items: [
             {
                 text: 'Combo',
                 path: '/autocomplete/combo',
