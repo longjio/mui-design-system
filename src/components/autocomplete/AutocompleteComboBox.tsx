@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import top100Films from './top100Films';
 
-export default function ComboBox() {
+export default function AutocompleteComboBox() {
     return (
         <Autocomplete
             disablePortal
