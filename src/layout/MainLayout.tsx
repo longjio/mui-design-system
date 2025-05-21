@@ -30,7 +30,8 @@ const menuGroups: MenuGroup[] = [
         title: 'Components',
         items: [
             { text: 'Button', path: '/button' },
-            { text: 'ButtonGroup', path: '/button-group' },  // 추가된 항목
+            { text: 'ButtonGroup', path: '/button-group' },
+            { text: 'DataGrid', path: '/data-grid' }
         ],
     },
     {

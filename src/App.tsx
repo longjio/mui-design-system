@@ -6,6 +6,7 @@ import ButtonGroupPage from './pages/ButtonGroupPage';
 import CardPage from './pages/CardPage';
 import TypographyPage from './pages/TypographyPage';
 import AutoCompletePage from './pages/AutoCompletePage';
+import DataGridPage from './pages/DataGridPage';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <Route path="/card" element={<CardPage />} />
                     <Route path="/typography" element={<TypographyPage />} />
                     <Route path="/autocomplete" element={<AutoCompletePage />} />
+                    <Route path="/data-gird" element={<DataGridPage />} />
                 </Routes>
             </MainLayout>
         </BrowserRouter>
