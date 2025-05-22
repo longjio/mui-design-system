@@ -1,4 +1,5 @@
-import { TextField, TextFieldProps } from '@mui/material';
+import React from 'react';
+import { TextField } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
@@ -17,10 +18,11 @@ export default function BasicDatePicker({
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DatePicker
-                label="날짜 선택"
+                label={label}
                 value={value}
                 onChange={onChange}
-                renderInput={(params) => <TextField {...params} />}
+                slots={{ textField: TextField }}
+                slotProps={{ textField: { variant: 'outlined' } }}
             />
         </LocalizationProvider>
     );
