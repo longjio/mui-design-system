@@ -43,6 +43,12 @@ const menuGroups: MenuGroup[] = [
     {
         title: 'Input',
         items: [
+            { text: 'Checkbox, Radio', path: '/input' },
+        ],
+    },
+    {
+        title: 'Input',
+        items: [
             {
                 text: 'Combo',
                 path: '/autocomplete/combo',

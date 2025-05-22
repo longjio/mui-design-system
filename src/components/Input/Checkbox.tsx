@@ -1,16 +1,20 @@
-import * as React from 'react';
-import Checkbox from '@mui/material/Checkbox';
-import {Stack} from "@mui/material";
+import { Checkbox, FormControlLabel } from '@mui/material';
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+interface BasicCheckboxProps {
+    label?: string;
+    checked?: boolean;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-export default function Checkboxes() {
+export default function BasicCheckbox({
+                                          label = 'Check me',
+                                          checked,
+                                          onChange,
+                                      }: BasicCheckboxProps) {
     return (
-        <Stack>
-            <Checkbox {...label} defaultChecked />
-            <Checkbox {...label} />
-            <Checkbox {...label} disabled />
-            <Checkbox {...label} disabled checked />
-        </Stack>
+        <FormControlLabel
+            control={<Checkbox checked={checked} onChange={onChange} />}
+            label={label}
+        />
     );
 }
