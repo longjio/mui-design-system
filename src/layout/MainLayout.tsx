@@ -47,7 +47,7 @@ const menuGroups: MenuGroup[] = [
         ],
     },
     {
-        title: 'Input',
+        title: 'Surface',
         items: [
             {
                 text: 'Combo',
@@ -57,6 +57,14 @@ const menuGroups: MenuGroup[] = [
                     { text: 'Grouped', path: '/autocomplete/combo/grouped' },
                 ],
             },
+        ],
+    },
+    {
+        title: 'Surface',
+        items: [
+            { text: 'Accordion', path: '/accordion' },
+            { text: 'Appbar', path: '/appbar' },
+            { text: 'Card', path: '/card' },
         ],
     },
 ];

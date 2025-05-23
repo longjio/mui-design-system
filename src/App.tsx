@@ -8,6 +8,8 @@ import TypographyPage from './pages/TypographyPage';
 import AutoCompletePage from './pages/AutoCompletePage';
 import DataGridPage from './pages/DataGridPage';
 import InputPage from './pages/InputPage';
+import AccordionPage from './pages/AccordionPage';
+import AppBarPage from './pages/AppBarPage';
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                     <Route path="/autocomplete" element={<AutoCompletePage />} />
                     <Route path="/data-grid" element={<DataGridPage />} />
                     <Route path="/input" element={<InputPage />} />
+                    <Route path="/accordion" element={<AccordionPage />} />
+                    <Route path="/appbar" element={<AppBarPage />} />
                 </Routes>
             </MainLayout>
         </BrowserRouter>

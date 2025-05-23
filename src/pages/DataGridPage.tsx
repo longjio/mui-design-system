@@ -4,7 +4,7 @@ import CustomDataGrid from '../components/CustomDataGrid';
 
 export default function DataGridPage() {
     return (
-        <Container maxWidth="md" sx={{ mt: 4 }}>
+        <Container maxWidth="lg" sx={{ mt: 4 }}>
             <Typography variant="h6" gutterBottom>
                 MUI X Data Grid
             </Typography>
