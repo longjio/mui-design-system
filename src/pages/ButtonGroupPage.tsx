@@ -45,15 +45,25 @@ export default function BasicButtonGroup() {
                     {buttons}
                 </ButtonGroup>
             </Stack>
-            <Typography variant="h6">Sizes and colors</Typography>
+            <Typography variant="h6">Vertical group</Typography>
             <Box
                 sx={{
                     display: 'flex',
                     '& > *': {
-                        m: 1,
+                        m: 2,
                     },
                 }}
             >
+                <ButtonGroup orientation="vertical" aria-label="Vertical button group">
+                    {buttons}
+                </ButtonGroup>
+                <ButtonGroup
+                    orientation="vertical"
+                    aria-label="Vertical button group"
+                    variant="contained"
+                >
+                    {buttons}
+                </ButtonGroup>
                 <ButtonGroup
                     orientation="vertical"
                     aria-label="Vertical button group"
