@@ -43,7 +43,10 @@ const menuGroups: MenuGroup[] = [
     {
         title: 'Input',
         items: [
-            { text: 'Checkbox, Radio', path: '/input' },
+            { text: 'Checkbox', path: '/input/checkbox' },
+            { text: 'Radio', path: '/input' },
+            { text: 'Slider', path: '/input' },
+            { text: 'Switch', path: '/input' },
         ],
     },
     {

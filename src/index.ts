@@ -1,0 +1,10 @@
+export { default as ButtonPage } from './pages/ButtonPage';
+export { default as ButtonGroupPage } from './pages/ButtonGroupPage';
+export { default as CardPage } from './pages/CardPage';
+export { default as TypographyPage } from './pages/TypographyPage';
+export { default as AutoCompletePage } from './pages/AutoCompletePage';
+export { default as DataGridPage } from './pages/DataGridPage';
+export { default as CheckboxPage } from './pages/CheckboxPage';
+export { default as AccordionPage } from './pages/AccordionPage';
+export { default as AppBarPage } from './pages/AppBarPage';
+export { default as SwitchPage } from './pages/SwitchPage';
