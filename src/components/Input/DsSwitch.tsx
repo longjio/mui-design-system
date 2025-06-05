@@ -1,15 +1,25 @@
 import * as React from 'react';
 import Switch from '@mui/material/Switch';
 
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
+export interface DsSwitchProps {
+    checked?: boolean;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    disabled?: boolean;
+    ariaLabel?: string;
+}
 
-export default function BasicSwitches() {
+export function DsSwitch({
+                             checked,
+                             onChange,
+                             disabled = false,
+                             ariaLabel = 'Switch',
+                         }: DsSwitchProps) {
     return (
-        <div>
-            <Switch {...label} defaultChecked />
-            <Switch {...label} />
-            <Switch {...label} disabled defaultChecked />
-            <Switch {...label} disabled />
-        </div>
+        <Switch
+            aria-label={ariaLabel}
+            checked={checked}
+            onChange={onChange}
+            disabled={disabled}
+        />
     );
 }
