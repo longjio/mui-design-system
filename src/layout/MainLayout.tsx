@@ -1,119 +1,37 @@
 import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import {
-    AppBar, Toolbar, Typography, Box, CssBaseline, Drawer,
-    IconButton, List, ListItemButton, ListItemText,
-    useTheme, useMediaQuery, Accordion, AccordionSummary, AccordionDetails,
+    AppBar,
+    Box,
+    CssBaseline,
+    Drawer,
+    IconButton,
+    Toolbar,
+    Typography,
+    useMediaQuery,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Link } from 'react-router-dom';
+import { useTheme } from '@mui/material/styles';
 
 const drawerWidth = 240;
 
-interface MenuItem {
-    text: string;
-    path: string;
-    children?: MenuItem[];
-}
+const drawerContent = (
+    <div>
+        <Typography variant="h6" sx={{ p: 2 }}>
+            메뉴
+        </Typography>
+        {/* 여기에 네비게이션 메뉴 아이템 추가 */}
+    </div>
+);
 
-interface MenuGroup {
-    title: string;
-    items: MenuItem[];
-}
-
-interface MainLayoutProps {
-    children: React.ReactNode;
-}
-
-const menuGroups: MenuGroup[] = [
-    {
-        title: 'Components',
-        items: [
-            { text: 'Button', path: '/button' },
-            { text: 'ButtonGroup', path: '/button-group' },
-            { text: 'DataGrid', path: '/data-grid' }
-        ],
-    },
-    {
-        title: 'Autocomplete',
-        items: [
-            { text: 'Autocomplete', path: '/autocomplete' },
-        ],
-    },
-    {
-        title: 'Input',
-        items: [
-            { text: 'Checkbox, Radio', path: '/input' },
-        ],
-    },
-    {
-        title: 'Surface',
-        items: [
-            {
-                text: 'Combo',
-                path: '/autocomplete/combo',
-                children: [
-                    { text: 'Async', path: '/autocomplete/combo/async' },
-                    { text: 'Grouped', path: '/autocomplete/combo/grouped' },
-                ],
-            },
-        ],
-    },
-    {
-        title: 'Surface',
-        items: [
-            { text: 'Accordion', path: '/accordion' },
-            { text: 'Appbar', path: '/appbar' },
-            { text: 'Card', path: '/card' },
-        ],
-    },
-];
-
-const MainLayout = ({ children }: MainLayoutProps) => {
+const MainLayout = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [mobileOpen, setMobileOpen] = useState(false);
 
-    const drawerContent = (
-        <>
-            <Toolbar />
-            {menuGroups.map((group, index) => (
-                <Accordion
-                    key={index}
-                    disableGutters
-                    elevation={0}
-                    sx={{ borderTop: '1px solid rgba(0, 0, 0, 0.12)', '&:before': { display: 'none' } }}
-                >
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-                            {group.title}
-                        </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails sx={{ py: 0 }}>
-                        <List disablePadding>
-                            {group.items.map((item) => (
-                                <React.Fragment key={item.text}>
-                                    <ListItemButton component={Link} to={item.path} sx={{ pl: 3 }}>
-                                        <ListItemText primary={item.text} />
-                                    </ListItemButton>
-                                    {item.children?.map((subItem) => (
-                                        <ListItemButton
-                                            key={subItem.text}
-                                            component={Link}
-                                            to={subItem.path}
-                                            sx={{ pl: 5 }}
-                                        >
-                                            <ListItemText primary={subItem.text} />
-                                        </ListItemButton>
-                                    ))}
-                                </React.Fragment>
-                            ))}
-                        </List>
-                    </AccordionDetails>
-                </Accordion>
-            ))}
-        </>
-    );
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -121,7 +39,12 @@ const MainLayout = ({ children }: MainLayoutProps) => {
             <AppBar position="fixed" sx={{ zIndex: theme.zIndex.drawer + 1 }}>
                 <Toolbar>
                     {isMobile && (
-                        <IconButton color="inherit" edge="start" onClick={() => setMobileOpen(!mobileOpen)} sx={{ mr: 2 }}>
+                        <IconButton
+                            color="inherit"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            sx={{ mr: 2 }}
+                        >
                             <MenuIcon />
                         </IconButton>
                     )}
@@ -131,15 +54,14 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                 </Toolbar>
             </AppBar>
 
-            {/* 반응형 Drawer */}
             {isMobile ? (
                 <Drawer
                     variant="temporary"
                     open={mobileOpen}
-                    onClose={() => setMobileOpen(false)}
+                    onClose={handleDrawerToggle}
                     ModalProps={{ keepMounted: true }}
                     sx={{
-                        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+                        '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box' },
                     }}
                 >
                     {drawerContent}
@@ -150,8 +72,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                     sx={{
                         width: drawerWidth,
                         flexShrink: 0,
-                        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+                        '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box' },
                     }}
+                    open
                 >
                     {drawerContent}
                 </Drawer>
@@ -159,7 +82,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <Toolbar />
-                {children}
+                <Outlet /> {/* 여기서 자식 라우트가 렌더링됩니다 */}
             </Box>
         </Box>
     );
