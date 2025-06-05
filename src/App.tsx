@@ -11,6 +11,7 @@ import InputPage from './pages/InputPage';
 import CheckboxPage from './pages/CheckboxPage';
 import RadioPage from './pages/RadioPage';
 import RatingPage from './pages/RatingPage';
+import SwitchPage from './pages/SwitchPage';
 import AccordionPage from './pages/AccordionPage';
 import AppBarPage from './pages/AppBarPage';
 
@@ -29,6 +30,7 @@ function App() {
                     <Route path="/checkbox" element={<CheckboxPage />} />
                     <Route path="/radio" element={<RadioPage />} />
                     <Route path="/rating" element={<RatingPage />} />
+                    <Route path="/switch" element={<SwitchPage />} />
                     <Route path="/accordion" element={<AccordionPage />} />
                     <Route path="/appbar" element={<AppBarPage />} />
                 </Routes>
